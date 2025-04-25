@@ -3,13 +3,14 @@
   --primary-color: #0a2963;
   --primary-light: #1e3b7d;
   --primary-dark: #051d4a;
+
   --accent-color: #3a86ff;
   --accent-hover: #2a76ef;
   --text-light: #f8f9fa;
   --text-dark: #0f172a;
   --text-muted: #64748b;
   --bg-color: #0f172a;
-  --card-bg: rgb(31, 32, 32);
+  --card-bg: rgb(100, 100, 100);
   --border-color: #e2e8f0;
   --success: #10b981;
   --warning: #f59e0b;
@@ -333,7 +334,6 @@ body {
   height: 200px;
   margin: 0 auto 20px;
   overflow: hidden;
-  /* Remove border radius from top of image since it's flush with card */
   border-radius: 0;
   position: relative;
 }
@@ -352,12 +352,12 @@ body {
 .service-card h3 {
   margin-bottom: 16px;
   font-size: 1.5rem;
-  color: var(--text-color);
+  color: var(--light-text);
   padding: 0 20px;
 }
 
 .service-card p {
-  color: var(--text-muted);
+  color: var(--light-text);
   padding: 0 20px;
 }
 
@@ -378,6 +378,7 @@ body {
 .about-text p {
   margin-bottom: 24px;
   font-size: 1.1rem;
+  color: var(--text-light);
 }
 
 .about-features {
@@ -412,6 +413,10 @@ body {
   margin-bottom: 8px;
   color: var(--text-light);
   font-size: 1.25rem;
+}
+.feature-text p {
+  color: var(--text-light);
+  font-size: 1rem;
 }
 
 .about-image img {
@@ -468,9 +473,12 @@ body {
 }
 
 .info-item a {
-  color: var(--text-dark);
+  color: var(--text-light);
   text-decoration: none;
   transition: var(--transition);
+}
+.info-item p {
+  color: var(--text-light);
 }
 
 .info-item a:hover {
@@ -492,6 +500,7 @@ body {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
+  color: var(--text-light);
 }
 
 .form-group input,
@@ -502,7 +511,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   background-color: var(--bg-color);
-  color: var(--text-dark);
+  color: var(--text-light);
   transition: var(--transition);
 }
 
