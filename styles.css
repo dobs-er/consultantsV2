@@ -287,6 +287,7 @@ body {
 /* Services Section */
 .services-section {
   padding: 80px 0;
+  background-color: var(--bg-color);
 }
 
 .section-title {
@@ -311,7 +312,7 @@ body {
 }
 
 .service-card {
-  background-color: var(--card-bg);
+  background: var(--card-bg);
   padding: 0 0 24px 0;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -360,7 +361,7 @@ body {
 /* About Section */
 .about-section {
   padding: 80px 0;
-  background-color: rgba(10, 41, 99, 0.05);
+  background: var(--bg-color);
 }
 
 .about-content {
@@ -419,6 +420,7 @@ body {
 /* Contact Section */
 .contact-section {
   padding: 80px 0;
+  background: var(--bg-color);
 }
 
 .contact-container {
