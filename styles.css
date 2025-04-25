@@ -10,7 +10,7 @@
   --text-dark: #0f172a;
   --text-muted: #64748b;
   --bg-color: #0f172a;
-  --card-bg: rgb(100, 100, 100);
+  --card-bg: rgb(16, 35, 82);
   --border-color: #e2e8f0;
   --success: #10b981;
   --warning: #f59e0b;
@@ -292,7 +292,13 @@ body {
   padding: 80px 0;
   background-color: var(--bg-color);
 }
+.services-section h3 {
+  color: var(--text-light);
+}
 
+.services-section p {
+  color: var(--text-light);
+}
 .section-title {
   font-size: 3rem;
   text-align: center;
