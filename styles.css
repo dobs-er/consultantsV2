@@ -44,7 +44,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Accounts for fixed header */
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -239,10 +239,7 @@ body {
   color: var(--text-light);
   padding: 120px 0;
   overflow: hidden;
-  background-image: url("images/pool-installation.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: var(--primary-dark);
 }
 
 .hero::after {
@@ -266,7 +263,7 @@ body {
   backdrop-filter: blur(3px);
   padding: 40px;
   border-radius: var(--border-radius);
-  /* background-color: rgba(10, 41, 99, 0.7); */
+  background-color: rgba(10, 41, 99, 0.05);
 }
 
 .hero-content h2 {
@@ -333,7 +330,6 @@ body {
   height: 200px;
   margin: 0 auto 20px;
   overflow: hidden;
-  /* Remove border radius from top of image since it's flush with card */
   border-radius: 0;
   position: relative;
 }
