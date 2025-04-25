@@ -315,7 +315,7 @@ body {
 }
 
 .service-card {
-  background-color: var(--card-bg);
+  background-color: rgb(6, 18, 71);
   padding: 0 0 24px 0;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
