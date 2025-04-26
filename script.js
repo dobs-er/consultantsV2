@@ -253,56 +253,37 @@ function validatePhone(phone) {
   return re.test(String(phone));
 }
 
-// Send form data to our backend and to EmailJS
+// Send form data using EmailJS
 function sendEmail(formData) {
-  // First, send to our PostgreSQL database via our API
-  fetch("/api/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Success storing in database:", data);
-
-      // After successful database storage, you could also send an email notification
-      // via a service like EmailJS. For now, we'll just display success message.
-      showSuccess(
-        "Your message has been sent successfully and stored in our database. We will get back to you soon!"
-      );
-      document.getElementById("contact-form").reset();
-
-      /* 
-    // Uncomment to enable EmailJS integration
-    return emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+  // Send the email via EmailJS
+  emailjs
+    .send("service_ki2vdnj", "template_gz74dh9", {
       name: formData.name,
       email: formData.email,
+      time: new Date().toLocaleString(),
       service: formData.service,
-      message: formData.message
-    });
-    */
+      message: formData.message,
     })
-    /*
-  // Uncomment if using EmailJS
-  .then(function(response) {
-    console.log('Email sent successfully!', response?.status, response?.text);
-    showSuccess('Your message has been sent successfully. We will get back to you soon!');
-    document.getElementById('contact-form').reset();
-  })
-  */
-    .catch(function (error) {
-      console.error("Error in submission process:", error);
-      showError(
-        "Sorry, there was an error sending your message. Please try again later or contact us directly by phone."
-      );
-    });
+    .then(
+      function (response) {
+        console.log(
+          "Email sent successfully!",
+          response?.status,
+          response?.text
+        );
+        showSuccess(
+          "Your message has been sent successfully. We will get back to you soon!"
+        );
+        // Reset the form after a successful email send
+        document.getElementById("contact-form").reset();
+      },
+      function (error) {
+        console.error("Error sending email:", error);
+        showError(
+          "Sorry, there was an error sending your message. Please try again later or contact us directly by phone."
+        );
+      }
+    );
 }
 
 // Show success message
